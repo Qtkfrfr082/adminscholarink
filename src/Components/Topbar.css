@@ -1,75 +1,72 @@
 .topbar {
-    width: 100%;
-    height: 60px;
-    background-color: #e2e2e2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #e2e2e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  border-bottom: 1px solid #000000; /* Add bottom border */
+}
+
+/* Icons in the topbar */
+.topbar__icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Space between the notification icon and profile icon */
+.topbar__icons i {
+  margin-left: 20px;
+  cursor: pointer;
+  color: #fff; /* Assuming you'd like it white */
+}
+
+/* Profile Icon with circular shape */
+.profile-icon {
+  position: relative;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* Circular profile image */
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white; /* Optional border for better visibility */
+}
+
+/* Optional hover effect for profile */
+.profile-img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* Responsive Design: Ensure the layout adjusts properly on small screens */
+@media (max-width: 576px) {
+  .topbar {
     padding: 0 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    box-sizing: border-box;
-    border-bottom: 1px solid #000000; /* Add bottom border */
   }
-  
-  /* Topbar brand (logo or brand name) */
-  .topbar__brand {
-    font-size: 18px;
-    color: #fff;
-  }
-  
-  /* Icons in the topbar */
-  .topbar__icons {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Space between the notification icon and profile icon */
-  .topbar__icons i {
-    margin-left: 20px;
-    cursor: pointer;
-    color: #fff; /* Assuming you'd like it white */
-  }
-  
-  /* Profile Icon with circular shape */
-  .profile-icon {
-    margin-left: 20px;
-    cursor: pointer;
-  }
-  
-  /* Circular profile image */
+
   .profile-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid white; /* Optional border for better visibility */
+    width: 35px;
+    height: 35px;
   }
-  
-  /* Optional hover effect for profile */
-  .profile-img:hover {
-    transform: scale(1.05);
-    transition: 0.3s ease;
+
+  .topbar__icons i {
+    margin-left: 10px;
   }
-  
-  /* Responsive Design: Ensure the layout adjusts properly on small screens */
-  @media (max-width: 576px) {
-    .topbar {
-      padding: 0 10px;
-    }
-  
-    .profile-img {
-      width: 35px;
-      height: 35px;
-    }
-  
-    .topbar__icons i {
-      margin-left: 10px;
-    }
-  
-    .topbar__brand {
-      font-size: 16px;
-    }
-  }
+}
