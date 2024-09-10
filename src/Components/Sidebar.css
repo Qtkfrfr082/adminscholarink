@@ -112,6 +112,7 @@ html, body {
   .toggle-btn {
     left: 250px; /* Adjust toggle button position */
   }
+  
 }
 
 /* Medium devices (iPads, Tablets) */
@@ -131,11 +132,20 @@ html, body {
       width: 220px; /* Adjust sidebar width for landscape tablets */
       
     }
-    .-btn {
+    .toggle-btn {
       left: 220px; /* Adjust toggle button position */
     }
+    .sidebar ul li {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns based on available width */
+      gap: 10px; /* Space between grid items */
+    }
+    }
   }
-}
+
 
 /* Small devices (Mobile Phones) */
 @media (max-width: 319px) {
@@ -143,6 +153,7 @@ html, body {
     width: 80px; /* Small width for mobile devices */
     
   }
+  
   .sidebar ul li {
     font-size: 14px; /* Adjust font size for smaller items */
     padding: 10px; /* Reduce padding */
@@ -151,6 +162,11 @@ html, body {
 
 /* Ensure responsiveness for devices with a max-width of 853px (Portrait tablets) */
 @media (max-width: 853px) and (orientation: portrait) {
+  .sidebar {
+    width: 200px; /* Adjust sidebar width for portrait tablets */
+  }
+}
+@media (max-width: 853px) and (orientation: landscape) {
   .sidebar {
     width: 200px; /* Adjust sidebar width for portrait tablets */
   }
