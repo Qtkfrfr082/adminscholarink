@@ -4,7 +4,6 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 250px;
   background-color: #f5d795 !important;
   z-index: 1; /* On top of Topbar */
   transform: translateX(0); /* Default position */
@@ -13,23 +12,12 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-.menu-btn {
-    position: absolute;
-    top: 10px;
-    background: rgba(255, 255, 255, 0); /* No background color */
-    border: none; /* No border */
-    padding: 0; /* Remove default padding */
-    cursor: pointer;
-    right: -30px;
-  }
-  
-  .menu-btn img {
-    vertical-align: middle; /* Align image vertically */
-  }
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto;
+}
+
 /* Fully visible sidebar */
 .sidebar-open {
   transform: translateX(0); /* Fully visible */
@@ -37,8 +25,8 @@ html, body {
 
 /* Move sidebar out of view */
 .sidebar-closed {
-  transform: translateX(-100%); 
- /* Move sidebar out of view */
+  transform: translateX(-100%);
+  /* Move sidebar out of view */
 }
 
 /* Hide sidebar content when closed */
@@ -49,11 +37,26 @@ html, body {
 /* Show menu button when sidebar is closed */
 .sidebar-closed .toggle-btn {
   display: block;
+  
 }
 
 /* Ensure toggle button is hidden when sidebar is open */
 .sidebar-open .toggle-btn {
   display: none;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 10px;
+  background: rgba(255, 255, 255, 0); /* No background color */
+  border: none; /* No border */
+  padding: 0; /* Remove default padding */
+  cursor: pointer;
+  right: -30px;
+}
+
+.menu-btn img {
+  vertical-align: middle; /* Align image vertically */
 }
 
 .Logo {
@@ -93,7 +96,6 @@ html, body {
 .toggle-btn {
   position: absolute;
   top: 10px;
-  left: 250px; /* Adjust position depending on sidebar width */
   z-index: 2;
   background: none;
   border: none;
@@ -102,7 +104,54 @@ html, body {
   display: none; /* Hidden by default */
 }
 
-.sidebar-closed .toggle-btn {
-  display: block; /* Show when sidebar is closed */
-  left: 20px; /* Adjust position when sidebar is closed */
+/* Default width for large devices */
+@media (min-width: 992px) {
+  .sidebar {
+    width: 250px; /* Sidebar width for large devices */
+  }
+  .toggle-btn {
+    left: 250px; /* Adjust toggle button position */
+  }
+}
+
+/* Medium devices (iPads, Tablets) */
+@media (max-width: 768px) {
+  /* Portrait mode */
+  @media (orientation: portrait) {
+    .sidebar {
+      width: 200px; /* Adjust sidebar width for portrait tablets */
+    }
+    .toggle-btn {
+      left: 200px; /* Adjust toggle button position */
+    }
+  }
+  /* Landscape mode */
+  @media (orientation: landscape) {
+    .sidebar {
+      width: 220px; /* Adjust sidebar width for landscape tablets */
+      
+    }
+    .-btn {
+      left: 220px; /* Adjust toggle button position */
+    }
+  }
+}
+
+/* Small devices (Mobile Phones) */
+@media (max-width: 319px) {
+  .sidebar {
+    width: 80px; /* Small width for mobile devices */
+    
+  }
+  .sidebar ul li {
+    font-size: 14px; /* Adjust font size for smaller items */
+    padding: 10px; /* Reduce padding */
+  }
+}
+
+/* Ensure responsiveness for devices with a max-width of 853px (Portrait tablets) */
+@media (max-width: 853px) and (orientation: portrait) {
+  .sidebar {
+    width: 200px; /* Adjust sidebar width for portrait tablets */
+  }
 }

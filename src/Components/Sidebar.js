@@ -1,11 +1,12 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sidebar.css';
+
 const Sidebar = ({ toggleSidebar }) => {
   return (
+    <body>
     <div className="sidebar d-flex flex-column align-items-center p-3 bg-light vh-100">
        <button onClick={toggleSidebar} className="btn menu-btn">
-        <img width="24" height="24" src="https://img.icons8.com/material-rounded/32/402f1d/menu--v1.png" alt="menu--v1" />
+        <img width="24" height="24" src="https://img.icons8.com/material-rounded/32/402f1d/menu--v1.png" alt="menu--v1"/>
       </button>
       <div className="sidebar__header mb-4">
         <div className="logo text-center">
@@ -42,6 +43,7 @@ const Sidebar = ({ toggleSidebar }) => {
   </li>
 </ul>
     </div>
+    </body>
   );
 };
 

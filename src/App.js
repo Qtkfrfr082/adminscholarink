@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './Components/Bootstrap4/css/bootstrap.min.css';
 import Sidebar from './Components/Sidebar';
 import Topbar from './Components/Topbar';
-import './App.css';
+
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Sidebar state
@@ -12,6 +12,8 @@ const App = () => {
   };
 
   return (
+    
+    
     <div className="container-fluid p-0">
       <Topbar  /> {/* Pass the toggle function */}
       
@@ -24,6 +26,7 @@ const App = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 
