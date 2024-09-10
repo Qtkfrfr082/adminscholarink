@@ -1,0 +1,43 @@
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #f5d795 !important;
+  z-index: 1; /* On top of Topbar */
+}
+.Logo{
+  height: 80px;
+}
+/* Style for sidebar items */
+.sidebar ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 20px; /* Adjust space inside each item */
+  margin-bottom: 10px; /* Adjust space between items */
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a hover effect */
+}
+
+.sidebar ul li:hover {
+  background-color: #ffe0a1; /* Background on hover */
+}
+.icon-spacing {
+  margin-right: var(--icon-text-spacing, 14px); /* Default to 8px, but editable */
+}
+
+/* Main content adjustment */
+.main-content {
+  margin-top: 60px; /* To avoid overlap with the Topbar */
+  padding: 20px;
+}

@@ -1,0 +1,108 @@
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #f5d795 !important;
+  z-index: 1; /* On top of Topbar */
+  transform: translateX(0); /* Default position */
+  transition: transform 0.3s ease; /* Smooth transition effect */
+  
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+.menu-btn {
+    position: absolute;
+    top: 10px;
+    background: rgba(255, 255, 255, 0); /* No background color */
+    border: none; /* No border */
+    padding: 0; /* Remove default padding */
+    cursor: pointer;
+    right: -30px;
+  }
+  
+  .menu-btn img {
+    vertical-align: middle; /* Align image vertically */
+  }
+/* Fully visible sidebar */
+.sidebar-open {
+  transform: translateX(0); /* Fully visible */
+}
+
+/* Move sidebar out of view */
+.sidebar-closed {
+  transform: translateX(-100%); 
+ /* Move sidebar out of view */
+}
+
+/* Hide sidebar content when closed */
+.sidebar-closed .sidebar-content {
+  display: none; /* Hide the content */
+}
+
+/* Show menu button when sidebar is closed */
+.sidebar-closed .toggle-btn {
+  display: block;
+}
+
+/* Ensure toggle button is hidden when sidebar is open */
+.sidebar-open .toggle-btn {
+  display: none;
+}
+
+.Logo {
+  height: 80px;
+}
+
+.sidebar__header {
+  text-align: center;
+}
+
+/* Style for sidebar items */
+.sidebar ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 20px; /* Adjust space inside each item */
+  margin-bottom: 10px; /* Adjust space between items */
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a hover effect */
+}
+
+.sidebar ul li:hover {
+  background-color: #ffe0a1; /* Background on hover */
+}
+
+.icon-spacing img {
+  margin-right: 14px; /* Adjust spacing between icon and text */
+}
+
+/* Toggle button styles */
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  left: 250px; /* Adjust position depending on sidebar width */
+  z-index: 2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none; /* Hidden by default */
+}
+
+.sidebar-closed .toggle-btn {
+  display: block; /* Show when sidebar is closed */
+  left: 20px; /* Adjust position when sidebar is closed */
+}
